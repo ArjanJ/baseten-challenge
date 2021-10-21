@@ -50,7 +50,9 @@ const Spotlight = ({ setSelected, spotlightVisible, setSpotlightVisible }) => {
 
   useEffect(() => {
     // Fetch search results only when the debounced query value changes.
-    if (debouncedQuery?.length) {
+    if (typeof debouncedQuery === 'string') {
+      // Clear results if query is cleared/empty.
+      if (!debouncedQuery) setResults(null);
       const searchResponse = search(debouncedQuery);
 
       if (searchResponse?.length) {
