@@ -1,4 +1,5 @@
 import { forwardRef } from 'react';
+import PropTypes from 'prop-types';
 
 const SpotlightResults = forwardRef(
   (
@@ -57,5 +58,18 @@ const SpotlightResults = forwardRef(
     );
   }
 );
+
+SpotlightResults.propTypes = {
+  activeItemIndex: PropTypes.number.isRequired,
+  activeTypeIndex: PropTypes.number.isRequired,
+  onResultClick: PropTypes.func.isRequired,
+  onResultKeyDown: PropTypes.func.isRequired,
+  results: PropTypes.arrayOf(
+    PropTypes.shape({
+      items: PropTypes.arrayOf(PropTypes.string).isRequired,
+      type: PropTypes.string.isRequired,
+    })
+  ),
+};
 
 export default SpotlightResults;

@@ -3,7 +3,6 @@
   border-radius: 6px;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.16);
   opacity: 0;
-  /* overflow: hidden; */
   position: relative;
   transition: all 0.25s cubic-bezier(0.33, 1, 0.68, 1);
   transform: scale(0.96);

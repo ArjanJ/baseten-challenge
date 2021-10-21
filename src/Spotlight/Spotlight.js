@@ -1,6 +1,7 @@
 import './spotlight.css';
 import { useEffect, useCallback, useRef, useState } from 'react';
 import debounce from 'lodash.debounce';
+import PropTypes from 'prop-types';
 import { search } from '../API';
 import * as KEYS from '../keys';
 import SearchIcon from './SearchIcon';
@@ -17,7 +18,7 @@ const Spotlight = ({ setSelected, spotlightVisible, setSpotlightVisible }) => {
   const [activeTypeIndex, setActiveTypeIndex] = useState(0);
   const [activeItemIndex, setActiveItemIndex] = useState(0);
 
-  /// Handle global hotkey events.
+  // Handle global hotkey events.
   const handleKeydown = useCallback(
     (event) => {
       const { ctrlKey, metaKey, which } = event;
@@ -43,8 +44,8 @@ const Spotlight = ({ setSelected, spotlightVisible, setSpotlightVisible }) => {
 
   useEffect(() => {
     // Focus the input when it becomes visible to save the user an extra click.
-    if (spotlightVisible && inputRef) {
-      focusTextInput();
+    if (spotlightVisible) {
+      focusTextInput(true);
     }
   }, [spotlightVisible]);
 
@@ -220,6 +221,12 @@ const Spotlight = ({ setSelected, spotlightVisible, setSpotlightVisible }) => {
       />
     </div>
   );
+};
+
+Spotlight.propTypes = {
+  setSelected: PropTypes.func.isRequired,
+  setSpotlightVisible: PropTypes.func.isRequired,
+  spotlightVisible: PropTypes.bool.isRequired,
 };
 
 export default Spotlight;

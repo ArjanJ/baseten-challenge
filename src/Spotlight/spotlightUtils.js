@@ -14,8 +14,7 @@ const alphabetize = (path) => (a, b) =>
  *
  * Note:
  * This code could be further optimized by using a
- * sorting algorithm if performance was a bottleneck
- * due to number of items being sorted.
+ * sorting algorithm if performance was a bottleneck.
  */
 export const sortResultsByType = (results = []) => {
   const types = {};
