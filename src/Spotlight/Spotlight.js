@@ -78,16 +78,14 @@ const Spotlight = ({ setSelected, spotlightVisible, setSpotlightVisible }) => {
   }, [results]);
 
   const handleInputChange = ({ target }) => {
-    // Check if string type, so that empty string passes condition.
-    if (typeof target?.value === 'string') {
-      setQuery(target.value);
+    if (!target) return;
+    setQuery(target.value);
 
-      /**
-       * Debounce updating value to avoid too many network requests in
-       * a real situation.
-       */
-      debouncedHandleInputChange(target.value);
-    }
+    /**
+     * Debounce updating value to avoid too many network requests
+     * if this was a real situation.
+     */
+    debouncedHandleInputChange(target.value);
   };
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
