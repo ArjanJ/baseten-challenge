@@ -49,6 +49,10 @@ const SpotlightResults = forwardRef(
             </li>
           );
         })}
+
+        {Array.isArray(results) && results.length === 0 && (
+          <div className="spotlight-no-results">No results found</div>
+        )}
       </ul>
     );
   }

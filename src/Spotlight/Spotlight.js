@@ -27,10 +27,10 @@ const Spotlight = ({ setSelected, spotlightVisible, setSpotlightVisible }) => {
       }
 
       if ((metaKey || ctrlKey) && which === KEYS.K_KEY) {
-        setSpotlightVisible(true);
+        setSpotlightVisible(!spotlightVisible);
       }
     },
-    [setSpotlightVisible]
+    [spotlightVisible, setSpotlightVisible]
   );
 
   useEffect(() => {
@@ -52,13 +52,14 @@ const Spotlight = ({ setSelected, spotlightVisible, setSpotlightVisible }) => {
     // Fetch search results only when the debounced query value changes.
     if (typeof debouncedQuery === 'string') {
       // Clear results if query is cleared/empty.
-      if (!debouncedQuery) setResults(null);
-      const searchResponse = search(debouncedQuery);
-
-      if (searchResponse?.length) {
-        const sortedResults = sortResultsByType(searchResponse);
-        setResults(sortedResults);
+      if (!debouncedQuery) {
+        return setResults(null);
       }
+
+      // Assuming that an array will always be returned from 'search'.
+      const searchResponse = search(debouncedQuery);
+      const sortedResults = sortResultsByType(searchResponse);
+      setResults(sortedResults);
     }
   }, [debouncedQuery]);
 
