@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/baseten-challenge/static/css/main.88f3e333.chunk.css",
-    "main.js": "/baseten-challenge/static/js/main.fda40b82.chunk.js",
-    "main.js.map": "/baseten-challenge/static/js/main.fda40b82.chunk.js.map",
+    "main.css": "/baseten-challenge/static/css/main.80b9696e.chunk.css",
+    "main.js": "/baseten-challenge/static/js/main.f00f29e4.chunk.js",
+    "main.js.map": "/baseten-challenge/static/js/main.f00f29e4.chunk.js.map",
     "runtime-main.js": "/baseten-challenge/static/js/runtime-main.554fa256.js",
     "runtime-main.js.map": "/baseten-challenge/static/js/runtime-main.554fa256.js.map",
     "static/js/2.5a15ece2.chunk.js": "/baseten-challenge/static/js/2.5a15ece2.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.f023e0b1.chunk.js": "/baseten-challenge/static/js/3.f023e0b1.chunk.js",
     "static/js/3.f023e0b1.chunk.js.map": "/baseten-challenge/static/js/3.f023e0b1.chunk.js.map",
     "index.html": "/baseten-challenge/index.html",
-    "static/css/main.88f3e333.chunk.css.map": "/baseten-challenge/static/css/main.88f3e333.chunk.css.map",
+    "static/css/main.80b9696e.chunk.css.map": "/baseten-challenge/static/css/main.80b9696e.chunk.css.map",
     "static/js/2.5a15ece2.chunk.js.LICENSE.txt": "/baseten-challenge/static/js/2.5a15ece2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.554fa256.js",
     "static/js/2.5a15ece2.chunk.js",
-    "static/css/main.88f3e333.chunk.css",
-    "static/js/main.fda40b82.chunk.js"
+    "static/css/main.80b9696e.chunk.css",
+    "static/js/main.f00f29e4.chunk.js"
   ]
 }
