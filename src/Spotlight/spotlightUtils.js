@@ -7,7 +7,7 @@ const alphabetize = (path) => (a, b) =>
  *
  * [
  *  {
- *    items: ['facebook/224', 'facebook/384'],
+ *    items: [{ id: 'facebook/224'}, {id: 'facebook/384'}],
  *    type: 'image-classification'
  *   }
  * ]
