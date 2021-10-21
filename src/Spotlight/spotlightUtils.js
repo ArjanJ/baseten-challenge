@@ -21,16 +21,16 @@ export const sortResultsByType = (results = []) => {
 
   return results
     .reduce((acc, curr) => {
-      const { id: currId, type: currType } = curr.item;
+      const { type: currType } = curr.item;
 
       // Handle new "type".
       if (!types[currType]) {
-        types[currType] = { type: currType, items: [currId] };
+        types[currType] = { type: currType, items: [curr.item] };
         acc = [...acc, types[currType]];
       } else {
         // Handle previously encountered "type".
-        types[currType].items = [...types[currType].items, currId].sort(
-          alphabetize()
+        types[currType].items = [...types[currType].items, curr.item].sort(
+          alphabetize('id')
         );
       }
 

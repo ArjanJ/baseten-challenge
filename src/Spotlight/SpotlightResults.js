@@ -1,5 +1,6 @@
 import { forwardRef } from 'react';
 import PropTypes from 'prop-types';
+import AuthorIcon from './AuthorIcon';
 
 const SpotlightResults = forwardRef(
   (
@@ -27,7 +28,7 @@ const SpotlightResults = forwardRef(
             <li className="spotlight-results-group" key={type}>
               <h4 className="spotlight-results-group-heading">{type}</h4>
               <ul className="spotlight-results-sublist">
-                {items?.map((id, j) => {
+                {items?.map(({ author, id, modified }, j) => {
                   const isItemActive = isTypeActive && j === activeItemIndex;
 
                   return (
@@ -42,7 +43,18 @@ const SpotlightResults = forwardRef(
                       role="option"
                       tabIndex={isItemActive ? '0' : '-1'}
                     >
-                      {id}
+                      <p className="spotlight-results-sublist-item-id">
+                        <span>{id}</span>
+                        <span>
+                          <AuthorIcon className="spotlight-results-sublist-item-author-icon" />
+                          <span className="spotlight-results-sublist-item-author">
+                            {author}
+                          </span>
+                        </span>
+                      </p>
+                      <p className="spotlight-results-sublist-item-date">
+                        Updated: {new Date(modified).toLocaleString()}
+                      </p>
                     </li>
                   );
                 })}
@@ -66,7 +78,13 @@ SpotlightResults.propTypes = {
   onResultKeyDown: PropTypes.func.isRequired,
   results: PropTypes.arrayOf(
     PropTypes.shape({
-      items: PropTypes.arrayOf(PropTypes.string).isRequired,
+      items: PropTypes.arrayOf(
+        PropTypes.shape({
+          author: PropTypes.string,
+          id: PropTypes.string,
+          modified: PropTypes.number,
+        })
+      ).isRequired,
       type: PropTypes.string.isRequired,
     })
   ),

@@ -49,8 +49,8 @@ const Spotlight = ({ setSelected, spotlightVisible, setSpotlightVisible }) => {
     }
   }, [spotlightVisible]);
 
+  // Fetch search results only when the debounced query value changes.
   useEffect(() => {
-    // Fetch search results only when the debounced query value changes.
     if (typeof debouncedQuery === 'string') {
       // Clear results if query is cleared/empty.
       if (!debouncedQuery) {
@@ -121,7 +121,7 @@ const Spotlight = ({ setSelected, spotlightVisible, setSpotlightVisible }) => {
   const handleInputKeyDown = (event) => {
     switch (event.which) {
       case KEYS.ENTER_KEY: {
-        setSelected(results[activeTypeIndex].items[activeItemIndex]);
+        setSelected(results[activeTypeIndex].items[activeItemIndex].id);
         break;
       }
       case KEYS.ARROW_UP_KEY: {
@@ -158,7 +158,7 @@ const Spotlight = ({ setSelected, spotlightVisible, setSpotlightVisible }) => {
           setActiveTypeIndex(activeTypeIndex + 1);
           setActiveItemIndex(0);
         } else if (isLastItemOfType && !hasNextType) {
-          // If very last item and type, focus back to top of list.
+          // If last item and type, focus back to top of list.
           setActiveTypeIndex(0);
           setActiveItemIndex(0);
         } else {
@@ -175,12 +175,12 @@ const Spotlight = ({ setSelected, spotlightVisible, setSpotlightVisible }) => {
 
   const handleInputClick = ({ target }) => target.select();
 
-  const handleResultClick = ({ target }) => {
+  const handleResultClick = ({ currentTarget }) => {
     // Convert string to number to avoid '9'+1 = 91.
-    const typeIndex = Number(target.getAttribute('data-type-index'));
-    const itemIndex = Number(target.getAttribute('data-item-index'));
+    const typeIndex = Number(currentTarget.getAttribute('data-type-index'));
+    const itemIndex = Number(currentTarget.getAttribute('data-item-index'));
 
-    setSelected(results[activeTypeIndex].items[activeItemIndex]);
+    setSelected(results[activeTypeIndex].items[activeItemIndex].id);
     setActiveItemIndex(itemIndex);
     setActiveTypeIndex(typeIndex);
   };

@@ -54,6 +54,8 @@
   justify-content: center;
   flex: 1;
   height: 100%;
+  max-width: 580px;
+  width: 100%;
 }
 
 .Placeholder {

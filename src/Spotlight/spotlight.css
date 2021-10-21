@@ -66,11 +66,46 @@
   padding: 10px 10px;
 }
 
+.spotlight-results-sublist-item p {
+  margin-top: 0;
+}
+
 .spotlight-results-sublist-item:focus,
 .spotlight-results-sublist-item[aria-selected='true'] {
   background-color: #9299ef;
   color: white;
   outline: none;
+}
+
+.spotlight-results-sublist-item:focus
+  .spotlight-results-sublist-item-author-icon,
+.spotlight-results-sublist-item[aria-selected='true']
+  .spotlight-results-sublist-item-author-icon {
+  fill: white;
+  opacity: 0.5;
+}
+
+.spotlight-results-sublist-item-id {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.spotlight-results-sublist-item-date {
+  opacity: 0.6;
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+.spotlight-results-sublist-item-author {
+  font-size: 14px;
+  margin-left: 4px;
+}
+
+.spotlight-results-sublist-item-author-icon {
+  opacity: 0.25;
+  vertical-align: middle;
 }
 
 .spotlight-search-icon {
