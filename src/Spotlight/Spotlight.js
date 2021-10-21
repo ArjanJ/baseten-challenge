@@ -180,7 +180,7 @@ const Spotlight = ({ setSelected, spotlightVisible, setSpotlightVisible }) => {
     const typeIndex = Number(currentTarget.getAttribute('data-type-index'));
     const itemIndex = Number(currentTarget.getAttribute('data-item-index'));
 
-    setSelected(results[activeTypeIndex].items[activeItemIndex].id);
+    setSelected(results[typeIndex].items[itemIndex].id);
     setActiveItemIndex(itemIndex);
     setActiveTypeIndex(typeIndex);
   };
