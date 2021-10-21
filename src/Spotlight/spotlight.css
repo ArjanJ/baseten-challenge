@@ -1,0 +1,75 @@
+.spotlight {
+  background-color: #edebeb;
+  border-radius: 6px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.16);
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.25s cubic-bezier(0.33, 1, 0.68, 1);
+  transform: scale(0.96);
+}
+
+.spotlight-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.spotlight-text-input {
+  appearance: none;
+  background: none;
+  border: none;
+  border-bottom: 1px solid lightgrey;
+  font-family: inherit;
+  font-size: 24px;
+  height: 60px;
+  padding: 0 20px;
+  width: 100%;
+  transition: all 0.15s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.spotlight-text-input:active,
+.spotlight-text-input:focus {
+  outline: none;
+}
+
+.spotlight-results,
+.spotlight-results-sublist {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.spotlight-results {
+  max-height: 230px;
+  overflow: auto;
+  padding: 0 12px;
+}
+
+.spotlight-results-group {
+  border-bottom: 1px solid lightgrey;
+  padding: 12px 0;
+}
+
+.spotlight-results-group:last-child {
+  border-bottom: none;
+}
+
+.spotlight-results-group-heading {
+  color: #6e6e6e;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0 0 8px;
+  padding: 0 10px;
+}
+
+.spotlight-results-sublist-item {
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 10px 10px;
+}
+
+.spotlight-results-sublist-item:focus,
+.spotlight-results-sublist-item[aria-selected='true'] {
+  background-color: #9299ef;
+  color: white;
+  outline: none;
+}
