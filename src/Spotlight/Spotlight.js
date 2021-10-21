@@ -3,6 +3,7 @@ import { useEffect, useCallback, useRef, useState } from 'react';
 import debounce from 'lodash.debounce';
 import { search } from '../API';
 import * as KEYS from '../keys';
+import SearchIcon from './SearchIcon';
 import SpotlightResults from './SpotlightResults';
 import { sortResultsByType } from './spotlightUtils';
 
@@ -205,6 +206,8 @@ const Spotlight = ({ setSelected, spotlightVisible, setSpotlightVisible }) => {
         type="text"
         value={query}
       />
+
+      <SearchIcon className="spotlight-search-icon" />
 
       <SpotlightResults
         activeItemIndex={activeItemIndex}

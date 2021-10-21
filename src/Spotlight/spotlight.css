@@ -3,7 +3,8 @@
   border-radius: 6px;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.16);
   opacity: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
+  position: relative;
   transition: all 0.25s cubic-bezier(0.33, 1, 0.68, 1);
   transform: scale(0.96);
 }
@@ -14,14 +15,12 @@
 }
 
 .spotlight-text-input {
-  appearance: none;
   background: none;
   border: none;
-  border-bottom: 1px solid lightgrey;
   font-family: inherit;
   font-size: 24px;
   height: 60px;
-  padding: 0 20px;
+  padding: 0 20px 0 55px;
   width: 100%;
   transition: all 0.15s cubic-bezier(0.33, 1, 0.68, 1);
 }
@@ -39,6 +38,7 @@
 }
 
 .spotlight-results {
+  border-top: 1px solid lightgrey;
   max-height: 230px;
   overflow: auto;
   padding: 0 12px;
@@ -72,4 +72,12 @@
   background-color: #9299ef;
   color: white;
   outline: none;
+}
+
+.spotlight-search-icon {
+  fill: #b3b3b3;
+  left: 16px;
+  pointer-events: none;
+  position: absolute;
+  top: 16px;
 }
